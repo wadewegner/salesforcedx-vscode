@@ -44,7 +44,10 @@ export async function activate(context: ExtensionContext) {
   startLWCLanguageServer(serverModule, context);
 
   if (workspaceType === lwcLanguageServer.WorkspaceType.SFDX) {
-    populateEslintSettingIfNecessary(context, workspace.getConfiguration());
+    await populateEslintSettingIfNecessary(
+      context,
+      workspace.getConfiguration()
+    );
   }
 }
 
@@ -87,10 +90,10 @@ function startLWCLanguageServer(
   context.subscriptions.push(disposable);
 }
 
-export function populateEslintSettingIfNecessary(
+export async function populateEslintSettingIfNecessary(
   context: ExtensionContext,
   config: WorkspaceConfiguration
-) {
+): Promise<void> {
   const nodePath = config.get<string>(ESLINT_NODEPATH_CONFIG);
 
   // User has not set one, use the eslint bundled with our extension
@@ -99,7 +102,7 @@ export function populateEslintSettingIfNecessary(
   // which contains the version number and needs to be updated on each extension
   if (!nodePath || nodePath.includes(LWC_EXTENSION_NAME)) {
     const eslintModule = context.asAbsolutePath(path.join('node_modules'));
-    config.update(
+    return await config.update(
       ESLINT_NODEPATH_CONFIG,
       eslintModule,
       ConfigurationTarget.Workspace
