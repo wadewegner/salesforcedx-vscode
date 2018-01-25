@@ -19,7 +19,6 @@ import { populateEslintSettingIfNecessary } from '../src/index';
 // tslint:disable:no-unused-expression
 describe('LWC ESlint Integration Tests', () => {
   before(async () => {
-    //
     const extension = extensions.getExtension(
       `salesforce.${LWC_EXTENSION_NAME}`
     );
