@@ -24,10 +24,12 @@
   "dependencies": {
     "@salesforce/salesforcedx-sobjects-faux-generator": "42.2.0",
     "@salesforce/salesforcedx-utils-vscode": "42.2.0",
+    "adm-zip": "^0.4.7",
     "glob": "^7.1.2",
     "rxjs": "^5.4.1"
   },
   "devDependencies": {
+    "@types/adm-zip": "^0.4.31",
     "@types/chai": "^4.0.0",
     "@types/glob": "^5.0.30",
     "@types/mocha": "2.2.38",

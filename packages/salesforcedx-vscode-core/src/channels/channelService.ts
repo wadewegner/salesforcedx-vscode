@@ -79,4 +79,8 @@ export class ChannelService {
   public showChannelOutput() {
     this.channel.show();
   }
+
+  public appendLine(text: string) {
+    this.channel.appendLine(text);
+  }
 }
