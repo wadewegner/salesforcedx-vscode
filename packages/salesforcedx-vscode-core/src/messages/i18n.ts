@@ -138,5 +138,6 @@ export const messages = {
   isv_debug_bootstrap_step4_convert_org_source:
     'SFDX: ISV Debugger Setup, Step 4 of 4: Converting unpackaged Apex Source',
 
-  error_creating_packagexml: 'Error creating package.xml. %s'
+  error_creating_packagexml: 'Error creating package.xml. %s',
+  error_extracting_org_source: 'Error extracting downloaded Apex source. %s'
 };
