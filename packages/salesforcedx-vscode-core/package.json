@@ -266,7 +266,7 @@
           "when": "config.salesforcedx-vscode-core.isv-debugger.enabled"
         },
         {
-          "command": "sfdx.force.apex.log.fetch",
+          "command": "sfdx.force.apex.log.get",
           "when": "sfdx:project_opened"
         }
       ]
@@ -409,8 +409,8 @@
         "title": "%isv_bootstrap_command_text%"
       },
       {
-        "command": "sfdx.force.apex.log.fetch",
-        "title": "%force_apex_log_fetch_text%"
+        "command": "sfdx.force.apex.log.get",
+        "title": "%force_apex_log_get_text%"
       }
     ],
     "configuration": {
